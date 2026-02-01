@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
     // Fetching all products from Fakestore api
     const fetchAllProducts = async ()=> {
         try {
-            const res = await axios.get("http://localhost:3000/products")
+            const res = await axios.get("https://zeptro-ecommerce-app.onrender.com/products")
             
             setProductData(res.data);
             // console.log(productData)

@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const FavoriteContext = createContext();
-const API = "http://localhost:3000/favorites";
+const API = "https://zeptro-ecommerce-app.onrender.com/favorites";
 
 export const FavoriteProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);

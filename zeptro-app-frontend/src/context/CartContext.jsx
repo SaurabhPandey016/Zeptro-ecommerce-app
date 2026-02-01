@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 export const CartContext = createContext(null);
 
-const API = "http://localhost:3000/cart";
+const API = "https://zeptro-ecommerce-app.onrender.com/cart";
 export const CartProvider = ({ children }) => {
   
   const [cartItem, setCartItem] = useState([]);
