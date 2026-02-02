@@ -24,7 +24,7 @@ createRoot(document.getElementById("root")).render(
           <App />
             <ToastContainer
             position="bottom-right"
-            autoClose={5000}
+            autoClose={2000}
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick={false}
@@ -32,7 +32,7 @@ createRoot(document.getElementById("root")).render(
             pauseOnFocusLoss
             draggable
             pauseOnHover
-            theme="light"
+            theme="dark"
           />
         </ClerkProvider>
         </FavoriteProvider>
