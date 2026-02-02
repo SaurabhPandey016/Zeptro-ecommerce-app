@@ -56,6 +56,7 @@ const Footer = () => {
       {/* bottom section */}
       <div className='mt-8 border-t border-gray-700 pt-6 text-center text-sm'>
         <p>&copy; {new Date().getFullYear()} <span className='text-red-500'>Zeptro</span>. All rights reserved</p>
+        <p>Made with ❤️ by Saurabh Pandey</p>
       </div>
     </footer>
   )
