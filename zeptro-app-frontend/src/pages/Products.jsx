@@ -53,7 +53,7 @@ const Products = () => {
       <div className="max-w-6xl mx-auto px-4 mb-10 mt-4.5">
         {productData?.length > 0 ? (
           <>
-            <div className="flex gap-8">
+            <div className="flex flex-col md:flex-row gap-8">
               <FilterSection
                 search={search}
                 setSearch={setSearch}
@@ -83,7 +83,7 @@ const Products = () => {
               ) : 
               (
                 <div className='flex justify-center items-center md:h-[600px] md:w-[900px] mt-10'>
-                  <Lottie animationData={notFound} classID='w-[500px]'/>
+                  <Lottie animationData={notFound} className='w-full max-w-[500px]'/>
                 </div>
               )}
             </div>

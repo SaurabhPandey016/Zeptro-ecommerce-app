@@ -22,8 +22,10 @@ app.use("/cart", cartRoutes);
 app.use("/favorites", favoriteRoutes);
 
 app.listen(process.env.PORT, () =>
-  console.log("Server running on port 3000")
+  console.log(`Server running on port ${process.env.PORT}`)
 );
+
+export default app;
 
 
 // for connection to vercel we'll make an aysnc function where we track if server already connected or notl
@@ -50,7 +52,7 @@ app.listen(process.env.PORT, () =>
 //   next();
 // })
 
-// export default app;
+
 
 // if (import.meta.url === `file://${process.argv[1]}`) {
 //   const port = process.env.PORT || 3000;

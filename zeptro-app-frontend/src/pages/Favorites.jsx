@@ -25,7 +25,7 @@ const Favorites = () => {
                 <img src={item.productId.images[0]} alt='' className='w-20 h-20 rounded-md'
                 />
                 <div>
-                  <h1 className='md:w-[300px] line-clamp-2 '>{item.productId.title}</h1>
+                          <h1 className='w-full md:w-[300px] line-clamp-2 '>{item.productId.title}</h1>
                   <p className='text-red-500 font-semibold text-lg'>${item.productId.price}</p>
                 </div>
               </div>

@@ -37,7 +37,7 @@ const Cart = () => {
 
               {
                 cartItem.map((item , index) => {
-                  // console.log(cartItem)
+                  // console.log(item)
                   return (
                     
                     // for Mapping
@@ -45,8 +45,11 @@ const Cart = () => {
 
                       {/* Images and Detailed Section */}
                       <div className='flex items-center gap-4'>
-                        <img src={item.productId.images[0]} alt='' className='w-20 h-20 rounded-md'/>
-
+                        <img src={item.productId.images[0]} alt='' className='w-20 h-20 rounded-md'
+                          // onClick={()=> navigate(`/products/${item.productId._id}`)}
+                          // cursor-pointer
+                        />
+                        
                         {/* // now div for details */}
                         <div>
                           <h1 className='md:w-[300px] line-clamp-2 '>{item.productId.title}</h1>
@@ -171,7 +174,7 @@ const Cart = () => {
         (
           <div className='flex flex-col gap-3 justify-center items-center h-[600px]'>
           <h1 className='text-red-500/80 font-bold text-5xl text-muted'>Oh no! Your cart is empty</h1>
-          <img src={emptyCart} alt="" className='w-[400px]'/>
+          <img src={emptyCart} alt="" className='w-full max-w-[400px]'/>
           <button onClick={()=>navigate('/products')} className='bg-red-500 text-white px-3 py-2 rounded-md cursor-pointer '>Continue Shopping</button>
         </div>
         ) 

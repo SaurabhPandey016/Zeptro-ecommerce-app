@@ -5,7 +5,7 @@ const FilterSection = ({search, setSearch, priceRange,  setPriceRange, category,
   const { categoryOnlyData } = getData();
 
   return (
-    <div className="bg-gray-100 mt-10 p-4 rounded-md h-max hidden md:block">
+    <div className="bg-gray-100 mt-10 p-4 rounded-md h-max md:block block">
       <input
         type="text"
         placeholder="Search.."

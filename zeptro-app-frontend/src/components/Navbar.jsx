@@ -31,7 +31,7 @@ const Navbar = () => {
     `block px-3 py-2 rounded-md ${isActive ? 'text-red-600 border-b-2 border-red-500' : 'text-gray-800'} transition-colors`;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50  bg-white/80 backdrop-blur-md transition-shadow ${scrolled ? 'shadow-md' : ''}`}>
+    <header className={`mb-6 fixed top-0 left-0 right-0 z-50  bg-white/80 backdrop-blur-md transition-shadow ${scrolled ? 'shadow-md' : ''}`}>
       <div className="max-w-6xl mx-auto flex items-center justify-between h-16 px-4 md:px-0">
         {/* Logo */}
         <div className="flex items-center gap-6">

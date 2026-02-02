@@ -82,7 +82,7 @@ const Carousel = () => {
           return (
             <div
               key={index}
-              className="bg-linear-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10 mt-12"
+              className="bg-linear-to-r from-[#0f0c29] via-[#302b63] to-[#24243e] -z-10 mt-16 md:mt-12"
             >
               <div className="flex flex-col md:flex-row gap-10 justify-center h-[600px] my-20 md:my-0 items-center px-4">
                 <div className="md:space-y-6 space-y-3">
@@ -106,7 +106,7 @@ const Carousel = () => {
                   <img
                     src={item.images[0]}
                     alt={item.title}
-                    className="rounded-full w-[550px] hover:scale-105 transition-all shadow-2xl shadow-red-400"
+                    className="rounded-full w-full max-w-[550px] hover:scale-105 transition-all shadow-2xl shadow-red-400"
                   />
                 </div>
               </div>
