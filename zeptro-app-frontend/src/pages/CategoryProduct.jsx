@@ -17,7 +17,10 @@ const CategoryProduct = () => {
     const getFilteredData = async () => {
       
       try {
-        const res = await axios.get(`http://localhost:3000/products/category/${prodId}`);
+        const res = await axios.get(
+          // `http://localhost:3000/products/category/${prodId}`
+          `https://zeptro-ecommerce-app.onrender.com/products/category/${prodId}`
+        );
         setSearchData(res.data || []);
       } catch (err) {
         console.error('failed to fetch category products', err);

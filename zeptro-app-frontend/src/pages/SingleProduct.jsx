@@ -15,7 +15,8 @@ const SingleProduct = () => {
   const getSingleProduct = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/products/single/${id}`
+        // `http://localhost:3000/products/single/${id}`
+        `https://zeptro-ecommerce-app.onrender.com/products/single/${id}`
       );
       const product = res.data;
       setSingleProduct(product);
