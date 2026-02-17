@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 
 const ProductListView = ({product}) => {
-  console.log(product);
+  // console.log(product);
   const navigate = useNavigate()
   const {addToCart} = useCart()
 

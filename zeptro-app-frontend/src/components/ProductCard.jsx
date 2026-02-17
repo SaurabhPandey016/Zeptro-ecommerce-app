@@ -7,7 +7,7 @@ import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai';
 
 
 const ProductCard = ({product}) => {
-
+    console.log(product);
     const {favorites, addToFavorites } = useFavorites();
     const navigate = useNavigate();
     const{addToCart, cartItem} = useCart();

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../context/DataContext.jsx";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,9 +6,11 @@ import Slider from "react-slick";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Category from "./Category.jsx";
 import { useNavigate } from "react-router-dom";
+import Loading from "../assets/Loading4.webm";
 
 const Carousel = () => {
   const { productData, fetchAllProducts } = useContext(DataContext);
+  // const [imagesLoaded, setImagesLoaded] = useState(0);
   const navigate = useNavigate();
   // Data fetched from context
   // console.log(data);
@@ -16,6 +18,21 @@ const Carousel = () => {
   useEffect(() => {
     fetchAllProducts();
   }, []);
+
+  // when each image loads
+  // const handleImageLoad = () => {
+  //   setImagesLoaded((prev) => prev + 1);
+  // };
+
+  if (!productData || productData.length === 0) {
+    return (
+      <div className="flex items-center justify-center h-[400px]">
+        <video muted autoPlay loop>
+          <source src={Loading} type="video/webm" />
+        </video>
+      </div>
+    );
+  }
 
   const SamplePrevArrow = (props) => {
     const { className, style, onClick } = props;
@@ -106,6 +123,7 @@ const Carousel = () => {
                   <img
                     src={item.images[0]}
                     alt={item.title}
+                    // onLoad={handleImageLoad}   // important for loading state
                     className="rounded-full w-full max-w-[550px] hover:scale-105 transition-all shadow-2xl shadow-red-400"
                   />
                 </div>
