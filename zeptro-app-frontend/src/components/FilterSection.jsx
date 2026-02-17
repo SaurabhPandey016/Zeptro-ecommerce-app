@@ -17,8 +17,7 @@ const FilterSection = ({search, setSearch, priceRange,  setPriceRange, category,
 
       {/* Category Only Data */}
       <h1 className="mt-5 font-semibold text-xl">Category</h1>
-
-      <div className="flex flex-col gap-2 mt-3">
+      <div className="flex flex-wrap md:flex-col flex-row gap-2 mt-3">
         {categoryOnlyData?.map((item, index) => {
           return (
             <div key={index} className="flex gap-2">

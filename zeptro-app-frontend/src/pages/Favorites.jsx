@@ -3,6 +3,7 @@ import { useCart } from "../context/CartContext";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import emptyCart from "../assets/empty-cart.png"
 
 const Favorites = () => {
   const { favorites, removeFromFavorites, removeByProductId } = useFavorites();
@@ -11,7 +12,6 @@ const Favorites = () => {
 
   return (
     <div className='mt-20 max-w-6xl mx-auto mb-5 px-4 md:px-0'>
-
       <h1 className='font-bold text-2xl'>My Wishlist ({favorites.length})</h1>
       {
         favorites.length > 0
@@ -45,8 +45,10 @@ const Favorites = () => {
 
         </div>
         :
-        <div>
-  
+        <div className='flex flex-col gap-3 justify-center items-center h-[600px]'>
+          <h1 className='text-red-500/80 font-bold text-5xl text-muted'>Oh no! Your Favourites is empty</h1>
+          <img src={emptyCart} alt="" className='w-full max-w-[400px]'/>
+          <button onClick={()=>navigate('/products')} className='bg-red-500 text-white px-3 py-2 rounded-md cursor-pointer '>Continue Shopping</button>
         </div>
       }
     </div>
