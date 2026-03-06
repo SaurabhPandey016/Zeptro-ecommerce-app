@@ -1,63 +1,63 @@
-// Import React and necessary dependencies
 import React from 'react'
-import { useCart } from '../context/CartContext'  // Custom hook to access cart state
-import { FaRegTrashAlt } from 'react-icons/fa';   // Trash icon for delete button
-import { LuNotebookText } from 'react-icons/lu';  // Receipt icon
-import { MdDeliveryDining } from 'react-icons/md'; // Delivery icon
-import { GiShoppingBag } from 'react-icons/gi';   // Shopping bag icon
-import emptyCart from "../assets/empty-cart.png" // Empty state image
-import { useNavigate } from 'react-router-dom';   // Navigation hook
+import { useCart } from '../context/CartContext'
+import { FaRegTrashAlt } from 'react-icons/fa';
+import { LuNotebookText } from 'react-icons/lu';
+import { MdDeliveryDining } from 'react-icons/md';
+import { GiShoppingBag } from 'react-icons/gi';
+import emptyCart from "../assets/empty-cart.png"
+import { useNavigate } from 'react-router-dom';
 
 
 const Cart = () => {
-  // Get cart operations and items from context
-  const{cartItem, increaseQty, decreaseQty, deleteItem} = useCart();
-  const navigate = useNavigate();
 
-  // Calculate total price of all items in cart
-  // Multiply each item's price by its quantity and sum them up
+  const{cartItem, increaseQty, decreaseQty, deleteItem} = useCart();
+  const navigate = useNavigate()
+
   const totalPrice = cartItem.reduce(
   (sum, item) => sum + item.productId.price * item.quantity,
   0
-  );
+);
 
   return (
 
     <div className='mt-20 max-w-6xl mx-auto mb-5 px-4 md:px-0' >
 
-      {/* Conditionally render cart contents or empty state */}
       {
         cartItem.length > 0
         ? 
-        // CART HAS ITEMS - Display cart with products and checkout form
+        // If Items is in Cart So show this
         (
           <div>
-            {/* Cart Header with item count */}
+
+            {/* HEading For my Cart */}
             <h1 className='font-bold text-2xl'>My Cart ({cartItem.length})</h1>
 
-            {/* Map through all cart items and display each one */}
+            {/* Division For all the Items in Map */}
             <div className='mt-10'>
 
               {
                 cartItem.map((item , index) => {
-                  // Render individual cart item with product info and quantity controls
+                  // console.log(item)
                   return (
                     
-                    // Cart item row: displays product image, name, price, qty controls, and delete button
+                    // for Mapping
                     <div key = {item._id} className='bg-gray-100 p-5 rounded-md flex items-center justify-between mt-3 w-full'>
 
-                      {/* Product image and details section */}
+                      {/* Images and Detailed Section */}
                       <div className='flex items-center gap-4'>
-                        <img src={item.productId.images[0]} alt='' className='w-20 h-20 rounded-md'/>
+                        <img src={item.productId.images[0]} alt='' className='w-20 h-20 rounded-md'
+                          // onClick={()=> navigate(`/products/${item.productId._id}`)}
+                          // cursor-pointer
+                        />
                         
-                        {/* Product name and price */}
+                        {/* // now div for details */}
                         <div>
                           <h1 className='md:w-[300px] line-clamp-2 '>{item.productId.title}</h1>
                           <p className='text-red-500 font-semibold text-lg'>${item.productId.price}</p>
                         </div>
                       </div>
 
-                      {/* Quantity control buttons (increase/decrease) */}
+                      {/* Now Buttons For Increment decrement */}
                       <div className='bg-red-500 text-white flex gap-4 p-2 rounded-md font-bold text-xl'>
                         <button 
                         onClick={() => decreaseQty(item._id)}
@@ -71,7 +71,6 @@ const Cart = () => {
                           +
                         </button>
                       </div>
-                      {/* Delete/trash button to remove item from cart */}
                       <span onClick={() => deleteItem(item._id)} className='hover:bg-white/60 transition-all rounded-full p-3 hover:shadow-2xl'>
                         <FaRegTrashAlt className='text-red-500 text-2xl cursor-pointer' />
                       </span>
@@ -81,25 +80,21 @@ const Cart = () => {
               }
             </div>
 
-            {/* Checkout section with delivery form and bill details */}
+            {/* Now Division For Check Out Section */}
             <div className='grid grid-cols-1 md:grid-cols-2 md:gap-20'>
-              {/* Delivery Information Form */}
               <div className='bg-gray-100 rounded-md p-7 mt-4 space-y-2'>
                 <h1 className='text-gray-800 font-bold text-xl'>Delivery Info</h1>
 
-                {/* User name input */}
                 <div className='flex flex-col space-y-1'>
                   <label htmlFor="">Full Name</label>
                   <input type="text" placeholder='Enter your name' className='p-2 rounded-md' />
                 </div>
 
-                {/* Delivery address input */}
                 <div className='flex flex-col space-y-1'>
                   <label htmlFor="">Address</label>
                   <input type="text" placeholder='Enter your address' className='p-2 rounded-md' />
                 </div>
 
-                {/* State and postal code inputs */}
                 <div className='flex w-full gap-5'>
                   <div className='flex flex-col space-y-1 w-full'>
                     <label htmlFor="">State</label>
@@ -111,7 +106,7 @@ const Cart = () => {
                   </div>
                 </div>
 
-                {/* Country and phone number inputs */}
+                {/* Division for Country and Phone Number */}
                 <div className='flex w-full gap-5'>
                   <div className='flex flex-col space-y-1 w-full'>
                     <label htmlFor="">Country</label>
@@ -123,7 +118,7 @@ const Cart = () => {
                   </div>
                 </div>
 
-                {/* Submit delivery information button */}
+                {/* Button For Submit */}
                 <button className='bg-red-500 text-white px-3 py-1 rounded-md mt-3 cursor-pointer'>Submit</button>
               </div>
 
@@ -177,7 +172,7 @@ const Cart = () => {
         : 
         // else Show this
         (
-          <div className='flex flex-col gap-3 justify-center items-center h-[600px]'>
+        <div className='flex flex-col gap-3 justify-center items-center h-[600px]'>
           <h1 className='text-red-500/80 font-bold text-5xl text-muted'>Oh no! Your cart is empty</h1>
           <img src={emptyCart} alt="" className='w-full max-w-[400px]'/>
           <button onClick={()=>navigate('/products')} className='bg-red-500 text-white px-3 py-2 rounded-md cursor-pointer '>Continue Shopping</button>

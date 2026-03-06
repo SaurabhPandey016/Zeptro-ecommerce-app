@@ -34,15 +34,6 @@ export const DataProvider = ({ children }) => {
         return categories;
     }
 
-    // as the aapi dont have brand property we are not using this function now
-    // const getUniqueBrand = (productData) => {
-    //     let categories = productData?.map((item) => {
-    //         return item.category.name;
-    //     })
-    //     categories =  ["All", ...new Set(categories)];
-    //     return categories;
-    // }
-
 
     // // for getting only unique categories from the data
     const categoryOnlyData = getUniqueCategory(productData);
