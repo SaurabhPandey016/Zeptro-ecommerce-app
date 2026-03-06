@@ -115,7 +115,7 @@ const Carousel = () => {
                   <p className="md:w-[500px] line-clamp-3 text-gray-400 pr-7">
                     {item.description}
                   </p>
-                  <button className="bg-gradient-to-r from-red-500 to-purple-500 text-white px-3 py-2 rounded-md cursor-pointer mt-2">
+                  <button onClick={()=>navigate('/products')} className="bg-gradient-to-r from-red-500 to-purple-500 text-white px-3 py-2 rounded-md cursor-pointer mt-2">
                     Shop Now
                   </button>
                 </div>
