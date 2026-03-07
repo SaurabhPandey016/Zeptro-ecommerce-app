@@ -61,7 +61,7 @@ export const FavoriteProvider = ({ children }) => {
    */
   const removeByProductId = async (productId) => {
     await fetch(`${API}/product/${productId}`, { method: "DELETE" });
-    toast.success("Product moved to Cart!")
+    // toast.success("Product moved to Cart!")
     fetchFavorites();
   };
 

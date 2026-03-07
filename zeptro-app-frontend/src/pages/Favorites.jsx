@@ -18,8 +18,7 @@ const Favorites = () => {
 
   return (
     <div className='mt-20 max-w-6xl mx-auto mb-5 px-4 md:px-0'>
-      {/* Wishlist header with item count */}
-      <h1 className='font-bold text-2xl'>My Wishlist ({favorites.length})</h1>
+      
       
       {/* Show favorites list if items exist, otherwise show empty state */}
       {
@@ -27,8 +26,11 @@ const Favorites = () => {
         ?
         // Favorites list - show all favorite items
         (
-
         <div>
+
+          {/* Wishlist header with item count */}
+            <h1 className='font-bold text-2xl'>My Wishlist ({favorites.length})</h1>
+
           {/* Map through all favorite items */}
           {favorites.map(item => (
             <div key={item._id} className='bg-gray-100 p-5 rounded-md flex items-center justify-between mt-3 w-full'>
