@@ -16,7 +16,7 @@ const Footer = () => {
             </Link>
             <p className='mt-2 text-sm'>Powering Your World with the Best in Ecommerce.</p>
             <p className='mt-2 text-sm'>123 Electronics St, Style City, NY 10001</p>
-            <p className='text-sm'>Email: support@Zeptro.com</p>
+            <p className='text-sm'>Email: developersaurabh04@gmail.com</p>
             <p className='text-sm'>Phone: +(91) 8720026790</p>
         </div>
         {/* customer service link */}
