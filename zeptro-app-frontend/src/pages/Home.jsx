@@ -14,7 +14,7 @@ const Home = () => {
       try {
         const res = await axios.get("https://zeptro-ecommerce-app.onrender.com/products");
         if(res.status === 200) {
-          setIsDataLoaded(true);
+          // setIsDataLoaded(true);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -27,7 +27,8 @@ const Home = () => {
   // Show loading until data is loaded
   if(!isDataLoaded) {
     return (
-      <div className="flex items-center justify-center h-[400px]">
+      <div className="flex flex-col gap-0.1 items-center justify-center h-[400px]">
+          Wait for few moments....
         <video muted autoPlay loop>
             <source src={Loading} type="video/webm" />
           </video>

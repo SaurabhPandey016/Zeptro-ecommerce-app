@@ -63,7 +63,7 @@ const Favorites = () => {
         (
         <div className='flex flex-col gap-3 justify-center items-center h-[600px]'>
           {/* Empty state message */}
-          <h1 className='text-red-500/80 font-bold text-5xl text-muted'>Oh no! Your Favourites is empty</h1>
+          <h1 className='text-red-500/80 font-bold text-5xl text-muted'>Oh no! Your Favourites are empty</h1>
           
           {/* Empty state illustration */}
           <img src={emptyCart} alt="" className='w-full max-w-[400px]'/>
