@@ -3,11 +3,10 @@ import Carousel from '../components/Carousel'
 import MidBanner from '../components/MidBanner'
 import  Features  from '../components/Features.jsx'
 import axios from 'axios'
-import Loading from "../assets/Loading4.webm";
 
 
 const Home = () => {
-  const [isDataLoaded, setIsDataLoaded] = useState(false);
+  // const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,19 +23,6 @@ const Home = () => {
     fetchData();
   }, []);
 
-  // Show loading until data is loaded
-  if(!isDataLoaded) {
-    return (
-      <div className="flex flex-col gap-0.1 items-center justify-center h-[400px]">
-          Wait for few moments....
-        <video muted autoPlay loop>
-            <source src={Loading} type="video/webm" />
-          </video>
-        </div>
-    )
-  }
-
-  // Show components only after data is loaded
   return (
     <div>
         <Carousel/>

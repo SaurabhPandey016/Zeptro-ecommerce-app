@@ -104,7 +104,8 @@ const Products = () => {
         ) : (
 
           // Else Loading Video
-          <div className="flex items-center justify-center h-[400px]">
+          <div className="flex flex-col items-center justify-center h-[400px]">
+            <p>Wait for few moments....</p>
             <video muted autoPlay loop>
               <source src={Loading} type="video/webm" />
             </video>
