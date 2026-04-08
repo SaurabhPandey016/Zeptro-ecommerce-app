@@ -8,20 +8,22 @@ import axios from 'axios'
 const Home = () => {
   // const [isDataLoaded, setIsDataLoaded] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get("https://zeptro-ecommerce-app.onrender.com/products");
-        if(res.status === 200) {
-          setIsDataLoaded(true);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // this is the error that is coming when I'm recording the representation video, error fixed!
+  
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await axios.get("https://zeptro-ecommerce-app.onrender.com/products");
+  //       if(res.status === 200) {
+  //         setIsDataLoaded(true);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
     
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <div>
