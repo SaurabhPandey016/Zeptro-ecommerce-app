@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Carousel from '../components/Carousel'
 import MidBanner from '../components/MidBanner'
 import  Features  from '../components/Features.jsx'
-import axios from 'axios'
+
 
 
 const Home = () => {
   // const [isDataLoaded, setIsDataLoaded] = useState(false);
 
   // this is the error that is coming when I'm recording the representation video, error fixed!
-  
+
   // useEffect(() => {
   //   const fetchData = async () => {
   //     try {
