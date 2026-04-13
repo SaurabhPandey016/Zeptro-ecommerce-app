@@ -3,10 +3,7 @@ import Carousel from '../components/Carousel'
 import MidBanner from '../components/MidBanner'
 import  Features  from '../components/Features.jsx'
 
-
-
 const Home = () => {
-
   return (
     <div>
         <Carousel/>
