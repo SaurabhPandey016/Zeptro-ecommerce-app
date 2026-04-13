@@ -1,6 +1,6 @@
 // Import required dependencies and middleware
 import express from "express";
-import mongoose from "mongoose";
+import connectDb from "./config/db.js";
 import cors from "cors";
 import dotenv from "dotenv";
 
@@ -12,6 +12,9 @@ import favoriteRoutes from "./routes/favoriteRoutes.js";
 // Load environment variables from .env file
 dotenv.config();
 
+// connect to MongoDb Database
+connectDb();
+
 // Initialize Express application
 const app = express();
 
@@ -21,10 +24,6 @@ app.use(cors());
 // Middleware to parse incoming JSON request bodies
 app.use(express.json());
 
-// Connect to MongoDB database using the connection URI from environment variables
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("MongoDB connected"))
-  .catch(err => console.log(err));
 
 // Register route handlers for different API endpoints
 app.use("/products", productRoutes);      // Routes for product operations (fetch, filter)
